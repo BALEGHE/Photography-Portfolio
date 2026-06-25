@@ -20,4 +20,80 @@ body {
     height: 180px;
     object-fit: cover;
     border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.photos img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px rgba(184, 155, 94, 0.8),
+                0 0 40px rgba(184, 155, 94, 0.5);
+}
+.image-viewer {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.95);
+    justify-content: center;
+    align-items: center;
+}
+
+.image-viewer img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+.close {
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+}
+.navbar {
+    background-color: #b89b5e; /* faded gold */
+    padding: 20px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-brand {
+    color: #000000;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.navbar-nav {
+    display: flex;
+    gap: 40px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar-nav a {
+    color: #000000; /* black text */
+    text-decoration: none;
+    font-size: 18px;
+    transition: 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+}
+
+/* hover effect */
+.navbar-nav a:hover {
+    color: #ffffff; /* white text */
+    background-color: rgba(255,255,255,0.15);
+}
+
+.navbar-brand:hover {
+    color: #ffffff;
 }
