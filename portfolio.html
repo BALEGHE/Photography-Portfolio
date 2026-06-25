@@ -75,5 +75,48 @@
                 <img src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03409.jpg" alt="Image 16">
                 <img src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC01294.jpg" alt="Image 17">
         </main>
+        <div id="imageViewer" class="image-viewer">
+    <span class="close">&times;</span>
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC01954.jpg" alt="Image 1">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03103.jpg" alt="Image 2">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\ET.jpg" alt="Image 3">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\ETANIA.jpg" alt="Image 4">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\KABZA.jpg" alt="Image 5">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03150.jpg" alt="Image 6">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03196.jpg" alt="Image 7">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03217.jpg" alt="Image 8">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC07378.jpg" alt="Image 9">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03486.jpg" alt="Image 10">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC01274.jpg" alt="Image 11">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC00613.jpg" alt="Image 12">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC00544-2.jpg" alt="Image 13">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC00493.jpg" alt="Image 14">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03217.jpg" alt="Image 15">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC03409.jpg" alt="Image 16">
+    <img id="fullImage" src="C:\Users\ausnd\TERMINAL\BALEGHE\BABMOTHA\DSC01294.jpg" alt="Image 17">
+</div>
+<script>
+const images = document.querySelectorAll('.photos img');
+const viewer = document.getElementById('imageViewer');
+const fullImage = document.getElementById('fullImage');
+const closeBtn = document.querySelector('.close');
+
+images.forEach(img => {
+    img.addEventListener('click', () => {
+        viewer.style.display = 'flex';
+        fullImage.src = img.src;
+    });
+});
+
+closeBtn.addEventListener('click', () => {
+    viewer.style.display = 'none';
+});
+
+viewer.addEventListener('click', (e) => {
+    if (e.target === viewer) {
+        viewer.style.display = 'none';
+    }
+});
+</script>
     </body>
 </html>
