@@ -6,10 +6,12 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="style.css">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="style1.css">
     </head>
     <body>
-          <nav class="navbar navbar-expand-lg navbar-dark">
+          
+  <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid">
       <a class="navbar-brand" href="index.html">BALEGHE'S EXPERIENCE</a>
       <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
@@ -19,31 +21,30 @@
         <ul class="navbar-nav ms-auto">
           <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
           <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
-          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
-          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          <li class="nav-item"><a class="nav-link" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link active" href="contact.html">Contact</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-        <section class="container text-center my-5 py-4">
+  
+  <section class="container text-center my-5 py-4">
     <h1 class="display-4 fw-bold">Get In Touch</h1>
     <p class="lead text-muted">Have a project in mind? Let's talk about bringing your vision to life.</p>
     <hr class="w-25 mx-auto border-secondary">
   </section>
+
   <section class="container mb-5">
     <div class="row g-5">
 
-        <div class="col-lg-5">
-            <div class="contact-card">
-            <h3 class="fw-bold mb-4">Contact Information</h3>
-            <p class="text-muted mb-2"><i class="bi bi-envelope-fill me-2"></i>Email:
+      <!-- CONTACT FORM -->
       <div class="col-lg-7">
         <div class="contact-card">
 
           <h3 class="fw-bold mb-4">Send a Message</h3>
 
-          
+          <!-- Success banner shown after submit -->
           <div class="success-banner" id="successBanner">
             <i class="bi bi-check-circle text-success" style="font-size: 3rem;"></i>
             <h4 class="mt-3 text-success">Message Sent!</h4>
@@ -51,6 +52,221 @@
           </div>
 
           <form id="contactForm" novalidate>
-        
-    </body>
-</html>
+
+            
+            <div class="row g-3 mb-3">
+              <div class="col-sm-6">
+                <label class="form-label">First Name</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person"></i></span>
+                  <input type="text" id="firstName" class="form-control" placeholder="e.g. John">
+                </div>
+                <div class="error-msg" id="firstNameErr">Please enter your first name.</div>
+              </div>
+              <div class="col-sm-6">
+                <label class="form-label">Last Name</label>
+                <div class="input-group">
+                  <span class="input-group-text"><i class="bi bi-person"></i></span>
+                  <input type="text" id="lastName" class="form-control" placeholder="e.g. Doe">
+                </div>
+                <div class="error-msg" id="lastNameErr">Please enter your last name.</div>
+              </div>
+            </div>
+
+            
+            <div class="mb-3">
+              <label class="form-label">Email Address</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="email" id="contactEmail" class="form-control" placeholder="you@example.com">
+              </div>
+              <div class="error-msg" id="emailErr">Please enter a valid email address.</div>
+            </div>
+
+            
+            <div class="mb-3">
+              <label class="form-label">Phone Number</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="e.g. 0712 345 678">
+              </div>
+              <div class="error-msg" id="phoneErr">Please enter a valid phone number.</div>
+            </div>
+
+            
+            <div class="mb-3">
+              <label class="form-label">Service You're Interested In</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-camera"></i></span>
+                <select id="serviceSelect" class="form-select">
+                  <option value="">-- Select a package --</option>
+                  <option value="essential">The Essential Showcase (KES 15,000)</option>
+                  <option value="hype">The Hype & Highlights (KES 20,000)</option>
+                  <option value="confessionals">The Confessionals (KES 25,000)</option>
+                  <option value="addon">Add-On Only</option>
+                  <option value="unsure">Not Sure Yet</option>
+                </select>
+              </div>
+              <div class="error-msg" id="serviceErr">Please select a service.</div>
+            </div>
+
+            
+            <div class="mb-3">
+              <label class="form-label">Event Date (if known)</label>
+              <div class="input-group">
+                <span class="input-group-text"><i class="bi bi-calendar"></i></span>
+                <input type="date" id="contactDate" class="form-control"
+                  style="background-color: #1a1a1a; color: white; color-scheme: dark;">
+              </div>
+            </div>
+
+            
+            <div class="mb-4">
+              <label class="form-label">Your Message</label>
+              <textarea id="contactMessage" class="form-control" rows="5"
+                placeholder="Tell us about your event, what you're looking for, any special requirements..."></textarea>
+              <div class="error-msg" id="messageErr">Please write a short message (at least 20 characters).</div>
+            </div>
+
+            <div class="d-flex gap-3">
+              <button type="button" id="sendBtn" class="btn btn-warning btn-lg px-5 fw-bold">
+                Send Message
+              </button>
+              <a href="services.html" class="btn btn-outline-light btn-lg">
+                ← View Packages
+              </a>
+            </div>
+
+          </form>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-5">
+        <div class="contact-info-box mb-4">
+          <h4 class="fw-bold mb-4">Contact Details</h4>
+
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <i class="bi bi-envelope-fill mt-1"></i>
+            <div>
+              <p class="fw-bold mb-0">Email</p>
+              <p class="text-muted small mb-0">baleghe@experience.com</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <i class="bi bi-telephone-fill mt-1"></i>
+            <div>
+              <p class="fw-bold mb-0">Phone / WhatsApp</p>
+              <p class="text-muted small mb-0">+254 712 345 678</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3 mb-4">
+            <i class="bi bi-geo-alt-fill mt-1"></i>
+            <div>
+              <p class="fw-bold mb-0">Based In</p>
+              <p class="text-muted small mb-0">Nairobi, Kenya</p>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-start gap-3">
+            <i class="bi bi-clock-fill mt-1"></i>
+            <div>
+              <p class="fw-bold mb-0">Response Time</p>
+              <p class="text-muted small mb-0">Within 24 hours</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="contact-info-box">
+          <h5 class="fw-bold mb-3">Follow The Work</h5>
+          <div class="d-flex gap-3 fs-4">
+            <a href="#" class="text-warning"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="text-warning"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="bi bi-twitter-x text-warning"></a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <footer class="text-center text-muted small mt-5 pb-4">
+    <div class="container">
+      <p class="mb-1">"You don't take a photograph, you make it." — Ansel Adams</p>
+      <p class="mb-0">&copy; BALEGHE'S EXPERIENCE. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Helper: show or clear error on a field
+    function setError(fieldId, errId, condition) {
+      const field = document.getElementById(fieldId);
+      const err   = document.getElementById(errId);
+      if (condition) {
+        field.classList.add('is-invalid');
+        field.classList.remove('is-valid');
+        err.classList.add('visible');
+        return false;
+      } else {
+        field.classList.remove('is-invalid');
+        field.classList.add('is-valid');
+        err.classList.remove('visible');
+        return true;
+      }
+    }
+
+    // Validate each field
+    function validateForm() {
+      let valid = true;
+
+      // First name
+      const firstName = document.getElementById('firstName').value.trim();
+      if (!setError('firstName', 'firstNameErr', firstName === '')) valid = false;
+
+      // Last name
+      const lastName = document.getElementById('lastName').value.trim();
+      if (!setError('lastName', 'lastNameErr', lastName === '')) valid = false;
+
+      // Email — must contain @ and a dot after it
+      const email = document.getElementById('contactEmail').value.trim();
+      const emailValid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+      if (!setError('contactEmail', 'emailErr', !emailValid)) valid = false;
+
+      // Phone — must be at least 9 digits
+      const phone = document.getElementById('contactPhone').value.trim();
+      const phoneValid = /^\+?[\d\s\-]{9,}$/.test(phone);
+      if (!setError('contactPhone', 'phoneErr', !phoneValid)) valid = false;
+
+      // Service
+      const service = document.getElementById('serviceSelect').value;
+      if (!setError('serviceSelect', 'serviceErr', service === '')) valid = false;
+
+      // Message — at least 20 characters
+      const message = document.getElementById('contactMessage').value.trim();
+      if (!setError('contactMessage', 'messageErr', message.length < 20)) valid = false;
+
+      return valid;
+    }
+
+   
+    document.getElementById('sendBtn').addEventListener('click', function () {
+      if (validateForm()) {
+        // Hide form, show success banner
+        document.getElementById('contactForm').style.display = 'none';
+        document.getElementById('successBanner').style.display = 'block';
+      }
+    });
+
+    // Live validation as user types (better UX)
+    ['firstName', 'lastName', 'contactEmail', 'contactPhone',
+     'serviceSelect', 'contactMessage'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', validateForm);
+    });
+  </script>
+  </body>
+  </html>
+
