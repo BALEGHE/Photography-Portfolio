@@ -87,7 +87,6 @@
         <input type="tel" id="phoneInput" class="form-control bg-dark text-white border-secondary" placeholder="Phone Number">
       </div>
 
-      <!-- FIX: date input styled so the calendar picker is visible -->
       <div class="mb-3">
         <label class="form-label text-white">Event Date</label>
         <input type="date" id="eventDate" class="form-control border-secondary"
@@ -102,10 +101,15 @@
         <textarea class="form-control bg-dark text-white border-secondary" rows="5" placeholder="Tell us about your event"></textarea>
       </div>
 
-      <!-- FIX: type="button" prevents page refresh -->
-      <button type="button" id="submitBtn" class="btn btn-warning btn-lg">
-        Submit Booking
-      </button>
+     
+      <div class="d-flex gap-3">
+  <button type="button" id="submitBtn" class="btn btn-warning btn-lg">
+    Submit Booking
+  </button>
+  <a href="services.html" class="btn btn-outline-light btn-lg">
+    ← Back to Packages
+  </a>
+</div>
 
     </form>
   </div>
