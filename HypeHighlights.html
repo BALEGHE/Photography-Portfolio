@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Confessionals | BALEGHE'S EXPERIENCE</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-dark text-white">
+
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="index.html">BALEGHE'S EXPERIENCE</a>
+      <button class="navbar-toggler bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="portfolio.html">Portfolio</a></li>
+          <li class="nav-item"><a class="nav-link active" href="services.html">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container py-5">
+
+    <h1 class="display-4 fw-bold">The Confessionals</h1>
+    <h2 class="text-warning mb-4">KES 25,000</h2>
+    <p class="lead">The complete multi-media toolkit combining premium event photography with high-engagement, social-ready vertical video edits.</p>
+
+    <hr>
+
+    <h3>Package Includes</h3>
+    <ul>
+      <li>Event photography paired with dynamic HD short-form motion capture.</li>
+      <li> 2x fully edited vertical video assets (Reels/TikTok format)..</li>
+      <li>Advanced, cinematic color grading tailored to lighting and mood..</li>
+      <li>:  Rapid delivery via private gallery within 2-3 working days.</li>
+    </ul>
+
+    <hr class="my-5">
+
+    <h3>Customize Your Package</h3>
+
+    <form id="bookingForm">
+
+      <div class="form-check">
+        <input class="form-check-input" type="checkbox" id="flash">
+        <label class="form-check-label" for="flash">Flash Delivery (+KES 5,000)</label>
+      </div>
+
+      <div class="form-check mt-3">
+        <input class="form-check-input" type="checkbox" id="coverage">
+        <label class="form-check-label" for="coverage">Extended Coverage (+KES 3,000/hr)</label>
+      </div>
+
+      <div class="mt-2">
+        <label class="form-label">Number of Hours</label>
+        <input type="number" class="form-control bg-dark text-white border-secondary" min="1" placeholder="Hours">
+      </div>
+
+      <div class="form-check mt-3">
+        <input class="form-check-input" type="checkbox" id="dual">
+        <label class="form-check-label" for="dual">Dual Perspective (+KES 10,000)</label>
+      </div>
+
+      <hr class="my-5">
+
+      <h3>Your Information</h3>
+
+      <div class="mb-3">
+        <input type="text" id="fullName" class="form-control bg-dark text-white border-secondary" placeholder="Full Name">
+      </div>
+
+      <div class="mb-3">
+        <input type="email" id="emailInput" class="form-control bg-dark text-white border-secondary" placeholder="Email">
+      </div>
+
+      <div class="mb-3">
+        <input type="tel" id="phoneInput" class="form-control bg-dark text-white border-secondary" placeholder="Phone Number">
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label text-white">Event Date</label>
+        <input type="date" id="eventDate" class="form-control border-secondary"
+          style="background-color: #2b2b2b; color: white; color-scheme: dark;">
+      </div>
+
+      <div class="mb-3">
+        <input type="text" id="venueInput" class="form-control bg-dark text-white border-secondary" placeholder="Event Venue">
+      </div>
+
+      <div class="mb-3">
+        <textarea class="form-control bg-dark text-white border-secondary" rows="5" placeholder="Tell us about your event"></textarea>
+      </div>
+
+     
+      <div class="d-flex gap-3">
+  <button type="button" id="submitBtn" class="btn btn-warning btn-lg">
+    Submit Booking
+  </button>
+  <a href="services.html" class="btn btn-outline-light btn-lg">
+    ← Back to Packages
+  </a>
+</div>
+
+    </form>
+  </div>
+
+  
+  <div class="modal fade" id="notifyModal" tabindex="-1" aria-labelledby="notifyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content bg-dark text-white border-secondary">
+
+        <div class="modal-header border-secondary">
+          <h5 class="modal-title" id="notifyModalLabel">🎉 Booking Received!</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+        </div>
+
+        <div class="modal-body">
+          <p>Thank you! We'll be in touch within 24 hours to confirm your booking.</p>
+          <hr class="border-secondary">
+          <p class="fw-bold text-warning">Want to stay in the loop?</p>
+          <p class="text-muted small">Subscribe to get early access to exclusive discounts, holiday shoot packages, and special offers — straight to your inbox.</p>
+          <input type="email" id="notifyEmail" class="form-control bg-dark text-white border-secondary" placeholder="Enter your email address">
+          <div id="notifyMsg" class="mt-2 small"></div>
+        </div>
+
+        <div class="modal-footer border-secondary">
+          <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Maybe Later</button>
+          <button type="button" class="btn btn-warning" id="subscribeBtn">Subscribe</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Booking form validation
+    document.getElementById('submitBtn').addEventListener('click', function () {
+      const name  = document.getElementById('fullName').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+      const phone = document.getElementById('phoneInput').value.trim();
+      const date  = document.getElementById('eventDate').value;
+      const venue = document.getElementById('venueInput').value.trim();
+
+      if (!name || !email || !phone || !date || !venue) {
+        alert('Please fill in your name, email, phone number, event date, and venue before submitting.');
+        return;
+      }
+
+      // Show the email notification modal
+      const modal = new bootstrap.Modal(document.getElementById('notifyModal'));
+      modal.show();
+
+      // Pre-fill the notification email with the one they already typed
+      document.getElementById('notifyEmail').value = email;
+    });
+
+    // Subscribe button inside the modal
+    document.getElementById('subscribeBtn').addEventListener('click', function () {
+      const notifyEmail = document.getElementById('notifyEmail').value.trim();
+      const msg = document.getElementById('notifyMsg');
+
+      if (!notifyEmail || !notifyEmail.includes('@')) {
+        msg.innerHTML = '<span class="text-danger">Please enter a valid email address.</span>';
+        return;
+      }
+
+      msg.innerHTML = '<span class="text-success">✓ You\'re subscribed! Watch your inbox for exclusive offers.</span>';
+      
+      // Close modal after 2 seconds
+      setTimeout(() => {
+        bootstrap.Modal.getInstance(document.getElementById('notifyModal')).hide();
+      }, 3000);
+    });
+  </script>
+
+</body>
+</html>
